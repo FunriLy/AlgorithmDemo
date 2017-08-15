@@ -7,6 +7,11 @@ package com.qg.fangrui.AlgorithmDemo.sorting;
  */
 public class Quick {
 
+    /**
+     * 快排
+     * 最好的情况：每次都正好将数组对半分，这种情况下次数满足分治递归公式 Cn=2Cn+N，解为Cn～Nlgn
+     * 最差情况：切分不平衡时，极为低效。有大数组出现。
+     */
 
     public static void sort(Comparable[] a) {
         sort(a, 0, a.length-1);
