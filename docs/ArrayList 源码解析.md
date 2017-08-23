@@ -6,7 +6,7 @@
 
 ------
 
-![](https://tuchuang001.com/images/2017/08/21/_002.png)
+![ArrayList 类图](/image/_002.png)
 
 
 
