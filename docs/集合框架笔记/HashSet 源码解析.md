@@ -6,7 +6,7 @@
 
 -------------------------
 
-![HashSet 类图](./image/_005.png)
+![HashSet 类图](../image/_005.png)
 
 对于 HashSet 来说，它是基于 HashMap 来实现的，其底层采用了 HashMap 来保存元素。
 
