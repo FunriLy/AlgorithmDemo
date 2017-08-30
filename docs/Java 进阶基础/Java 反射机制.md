@@ -201,6 +201,35 @@ public class TimeAdvice implements Advice {
 }
 ```
 
+代理对象类：
+
+```java
+public class SimpleProxy implements InvocationHandler{
+
+    private Object obj;
+    private Advice advice;
+    // 指定代理对象
+    public Object bind(Object obj, Advice advice){
+        this.obj = obj;
+        this.advice = advice;
+        return Proxy.newProxyInstance(obj.getClass().getClassLoader(), obj.getClass().getInterfaces(), this);
+    }
+    // 实现代理
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        Object result = null;
+        try {
+            advice.before();
+            result = method.invoke(obj, args);
+            advice.after();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return result;
+    }
+}
+```
+
 客户端调用：
 
 ```java
